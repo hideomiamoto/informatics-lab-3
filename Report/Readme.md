@@ -184,8 +184,6 @@ sudo ip addr add 192.168.20.2/24 dev enp0s8
 sudo ip link set enp0s8 up
 ```
 
-![#](images/13.png)
-
 Затем с `Ubuntu-C` была проверена доступность `Ubuntu-A` по адресу `192.168.20.1`:
 
 ```bash
@@ -224,12 +222,11 @@ ping -c 4 -W 1 192.168.20.2
 ```text
 connect: Network is unreachable
 ```
+![Проверка отсутствия связи Ubuntu-B и Ubuntu-C](images/12.png)
 
 Это означает, что у `Ubuntu-B` нет маршрута до сети `192.168.20.0/24`, где находится `Ubuntu-C`.
 
 Такой результат является правильным, потому что `Ubuntu-B` подключена только к сети `lab_ab`, а `Ubuntu-C` подключена только к сети `lab_ac`. Между этими сетями нет маршрутизации через `Ubuntu-B`.
-
-![Проверка отсутствия связи Ubuntu-B и Ubuntu-C](images/12.png)
 
 ---
 
